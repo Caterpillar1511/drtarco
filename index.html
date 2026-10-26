@@ -1,0 +1,204 @@
+---
+---
+<!doctype html>
+<html lang="es">
+<head>
+{% include head.html %}
+<script>
+  // La intro (logo, luego el llano) solo se muestra si hay JavaScript y no se pidió reducir el movimiento
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('con-intro');
+</script>
+</head>
+<body>
+
+<div id="intro" class="intro" aria-hidden="true">
+  <div class="intro-llano" style="background-image: url('{{ '/assets/llano.jpg' | relative_url }}')"></div>
+  <div class="intro-centro">
+    <div class="intro-logo">
+      <img src="{{ '/assets/logo.png' | relative_url }}" alt="">
+    </div>
+    <p class="intro-nombre">Dr. Jorge Luis Corredor Hernández<span>Médico anestesiólogo</span></p>
+  </div>
+  <p class="intro-lema">Del llano, para el llano</p>
+  <button type="button" class="intro-saltar">Saltar intro</button>
+</div>
+
+{% include nav.html %}
+
+<header class="hero" id="inicio" style="background-image: url('{{ '/assets/llano.jpg' | relative_url }}')">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">Médico anestesiólogo · Villavicencio, Meta</p>
+      <h1>Dr. Jorge Luis Corredor Hernández<span>Pionero de la medicina en el Meta</span></h1>
+      <p class="lead">Más de tres décadas acompañando con profesionalismo y humanidad a los pacientes del llano, desde el quirófano hasta la recuperación.</p>
+      <ul class="creds">
+        <li>Anestesiólogo, Universidad Nacional de Colombia</li>
+        <li>Médico, Pontificia Universidad Javeriana</li>
+        <li>Al servicio del Meta desde 1991</li>
+      </ul>
+    </div>
+    <div class="hero-logo"><img src="{{ '/assets/logo.png' | relative_url }}" alt="Logo JLC del Dr. Jorge Luis Corredor"></div>
+  </div>
+</header>
+
+<main>
+<section id="quien-soy">
+  <div class="wrap two">
+    <div class="prose">
+      <p class="eyebrow">Quién soy</p>
+      <h2>Una vida dedicada a la salud del llano</h2>
+      <p>El Dr. Jorge Luis Corredor Hernández, médico anestesiólogo, ha sido un pilar de la atención hospitalaria en el departamento desde 1991. Ha acompañado a pacientes de diversa complejidad en el Hospital Departamental y en la Clínica Meta de Villavicencio.</p>
+      <p>Su liderazgo ha trascendido el ejercicio clínico. Ha contribuido no solo a salvar vidas, sino a fortalecer las instituciones de salud de la región.</p>
+      <p>Su vocación ha estado marcada por una mirada compasiva, un servicio desinteresado y el compromiso constante de llevar los avances médicos al servicio del pueblo llanero.</p>
+    </div>
+    <ul class="facts" aria-label="Trayectoria">
+      <li><b>1991</b><span>Inicia su ejercicio como anestesiólogo en el departamento del Meta.</span></li>
+      <li><b>30+</b><span>Años de servicio en el Hospital Departamental y la Clínica Meta de Villavicencio.</span></li>
+      <li><b>Presidente</b><span>Asociación de Anestesiólogos del Meta.</span></li>
+      <li><b>Tesorero</b><span>Colegio Médico del Meta.</span></li>
+      <li><b>Directivo</b><span>Miembro activo en la dirección de la Clínica Meta.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="award" aria-labelledby="premio">
+  <div class="wrap">
+    <p class="eyebrow">Reconocimiento</p>
+    <h2 id="premio">Orden al Mérito “Héroes sin capa, Carlos Fabián Nieto”</h2>
+    <p>Exaltamos la vida y trayectoria de un médico que ha dedicado más de tres décadas al servicio de la salud en el Meta. Con esta orden se reconoce su legado, su ética y su entrega.</p>
+    <blockquote>“Una vida al servicio de los demás también construye territorio.”</blockquote>
+  </div>
+</section>
+
+<section id="anestesia-segura">
+  <div class="wrap">
+    <p class="eyebrow">Anestesia segura</p>
+    <h2>Su seguridad, antes, durante y después de la cirugía</h2>
+    <div class="prose">
+      <p>La anestesia moderna es muy segura cuando se planea con cuidado y se vigila de forma continua. El anestesiólogo es el médico que cuida su vida mientras usted está en cirugía: controla el dolor, la respiración, el corazón y la presión arterial en cada momento.</p>
+    </div>
+    <ol class="steps">
+      <li>
+        <h3>Valoración preanestésica</h3>
+        <p>Antes del procedimiento revisamos su historia clínica, sus exámenes y su estado de salud para elegir el tipo de anestesia más adecuado para usted.</p>
+      </li>
+      <li>
+        <h3>Información completa</h3>
+        <p>Cuéntenos qué medicamentos toma, si tiene alergias, enfermedades o si ha tenido reacciones a una anestesia anterior.</p>
+      </li>
+      <li>
+        <h3>Monitoreo continuo</h3>
+        <p>Durante la cirugía vigilamos sin interrupción su oxigenación, ritmo cardiaco y presión arterial con equipos especializados.</p>
+      </li>
+      <li>
+        <h3>Recuperación acompañada</h3>
+        <p>Al terminar lo acompañamos mientras despierta, controlamos el dolor y le damos indicaciones claras para su casa.</p>
+      </li>
+    </ol>
+    <p class="note">Siga siempre las indicaciones de ayuno y de medicamentos que le dé su médico. Esta información es orientativa y no reemplaza la consulta.</p>
+  </div>
+</section>
+
+<figure class="banda-llano" style="background-image: url('{{ '/assets/llano.jpg' | relative_url }}')">
+  <figcaption class="wrap">Del llano, para el llano</figcaption>
+</figure>
+
+<section id="historia" class="alt">
+  <div class="wrap">
+    <p class="eyebrow">Historia</p>
+    <h2>Una familia pionera de la medicina en el llano</h2>
+    <div class="prose">
+      <p>El Dr. Jorge Luis Corredor hace parte de una de las familias del llano que han sido pioneras de la anestesiología y la medicina en el Meta. Entre los médicos fundadores de la Clínica Meta estuvieron los doctores Armando Corredor y Luis Corredor.</p>
+      <p>La Clínica Meta surgió de una controversia de los médicos de la época con el entonces Gobernador del Meta, Policarpo Castillo Dávila, con quien no lograron un acuerdo sobre sus condiciones laborales. Un grupo de médicos visionarios decidió entonces crear una clínica que, aunque privada, ofreciera soluciones de salud a la comunidad llanera con tarifas asequibles para ayudar a los más desfavorecidos de la región.</p>
+      <p class="founders">El grupo fue liderado por el <strong>Dr. Yesid Campo</strong>, acompañado por los doctores Jaime Botero, <strong>Armando Corredor</strong>, <strong>Luis Corredor</strong>, Jairo Delgado, Arturo Giraldo, Fabio Jaramillo, Álvaro Mesa, Miguel Navarro, Héctor Parrado, Miguel Parrado, José Pinzón, Héctor Ríos, Joaquín Roncancio, Carlos Royero, Gabriel Rojas, Víctor Rojas y Alfredo Rozo. También participaron la madre María Inmaculada, de la Comunidad de Hermanas de la Sabiduría, y los padres Cristóbal Castillo, Fernando Sendoya y Moisés Rodríguez, para brindar apoyo espiritual a los pacientes, junto con las auxiliares de enfermería Lucy Ovalle y Teresa Mora.</p>
+    </div>
+    <ol class="timeline">
+      <li><time datetime="1969-12-05">1969</time><p>El 5 de diciembre abre sus puertas la Clínica Meta, en un lote que costó $300.000 y con obra del arquitecto Plinio Hernán Castro. Inicia con urgencias 24 horas, medicina general, ortopedia, anestesiología, cirugía general, ginecología, nutrición, fisioterapia, laboratorio, enfermería y terapia de lenguaje.</p></li>
+      <li><time datetime="1971-03-18">1971</time><p>Se inscribe en la Cámara de Comercio de Villavicencio como Inversiones Clínica del Meta Limitada.</p></li>
+      <li><time datetime="1991">1991</time><p>El Dr. Jorge Luis Corredor inicia su ejercicio como anestesiólogo en el departamento.</p></li>
+      <li><time datetime="1993-08-09">1993</time><p>La institución se transforma en sociedad anónima: Inversiones Clínica del Meta S.A.</p></li>
+      <li><time datetime="1998">1998</time><p>Convenio académico con la Universidad Cooperativa para formar a los futuros médicos de la región.</p></li>
+      <li><time datetime="2004">2004</time><p>Abre la Unidad de Cuidado Intensivo Yesid Campo Montoya, en honor al socio fundador fallecido en el año 2000.</p></li>
+      <li><time datetime="2009">2009</time><p>Se inaugura la Torre M, un edificio de 6 pisos que amplía la atención con instalaciones modernas y hotelería de alto nivel.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section id="videos">
+  <div class="wrap">
+    <p class="eyebrow">Videos</p>
+    <h2>Aprenda sobre la anestesia</h2>
+    <div class="videos">
+      {% for v in site.data.videos %}
+      <article class="video">
+        <div class="video-marco">
+          <iframe src="https://www.youtube-nocookie.com/embed/{{ v.youtube }}?cc_load_policy=1&amp;cc_lang_pref=es&amp;hl=es" title="{{ v.titulo }}" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <h3>{{ v.titulo }}</h3>
+        {% if v.descripcion %}<p>{{ v.descripcion }}</p>{% endif %}
+        <p><a href="https://www.youtube.com/watch?v={{ v.youtube }}" target="_blank" rel="noopener">Ver en YouTube</a></p>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section id="blog" class="alt">
+  <div class="wrap">
+    <p class="eyebrow">Blog</p>
+    <h2>Notas del doctor</h2>
+    <p class="blog-intro">Anestesia, salud, ciclismo y la vida en el llano.</p>
+    <div class="entradas">
+      {% for post in site.posts %}
+      <a class="entrada" href="{{ post.url | relative_url }}">
+        <span class="entrada-meta"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d/%m/%Y" }}</time>{% if post.tema %} · {{ post.tema }}{% endif %}</span>
+        <h3>{{ post.title }}</h3>
+        <p>{{ post.resumen | default: post.excerpt | strip_html | truncatewords: 30 }}</p>
+        <span class="entrada-leer">Leer más</span>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section id="contacto">
+  <div class="wrap">
+    <p class="eyebrow">Contacto</p>
+    <h2>Hablemos</h2>
+    <div class="contact-grid">
+      <div><h3>Correo</h3><p class="pending">Pendiente de confirmar</p></div>
+      <div><h3>Teléfono</h3><p class="pending">Pendiente de confirmar</p></div>
+      <div><h3>Dónde atiende</h3><p>Clínica Meta<br>Villavicencio, Meta, Colombia</p></div>
+    </div>
+  </div>
+</section>
+</main>
+
+{% include footer.html %}
+
+<script>
+  (function () {
+    var raiz = document.documentElement, t1, t2;
+    function iniciar() {
+      // Se clona la intro para que las animaciones arranquen desde cero
+      var vieja = document.getElementById('intro'), intro = vieja.cloneNode(true);
+      intro.classList.remove('intro-paso2', 'intro-fin');
+      vieja.parentNode.replaceChild(intro, vieja);
+      raiz.classList.add('con-intro');
+      var fin = function () {
+        clearTimeout(t1); clearTimeout(t2);
+        intro.classList.add('intro-fin');
+        setTimeout(function () { raiz.classList.remove('con-intro'); }, 700);
+      };
+      // 1) se dibuja el logo, 2) aparece el llano, 3) se muestra la página
+      t1 = setTimeout(function () { intro.classList.add('intro-paso2'); }, 3600);
+      t2 = setTimeout(fin, 6400);
+      intro.querySelector('.intro-saltar').addEventListener('click', fin);
+    }
+    if (raiz.classList.contains('con-intro')) iniciar();
+    document.getElementById('ver-intro').addEventListener('click', function () { window.scrollTo(0, 0); iniciar(); });
+  })();
+</script>
+
+</body>
+</html>

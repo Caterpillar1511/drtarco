@@ -1,0 +1,10 @@
+# Configuración del sitio (GitHub Pages lo construye con Jekyll automáticamente)
+title: Dr. Jorge Luis Corredor
+description: Dr. Jorge Luis Corredor Hernández, médico anestesiólogo en Villavicencio, Meta.
+lang: es
+# Ruta del sitio en GitHub Pages (caterpillar1511.github.io/drtarco). Si algún día usan un dominio propio, cambiar a ""
+baseurl: /drtarco
+permalink: /blog/:year/:month/:day/:title/
+exclude:
+  - README.md
+  - COMO-PUBLICAR.md
