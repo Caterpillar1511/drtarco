@@ -1,169 +1,25 @@
+---
+---
 <!doctype html>
 <html lang="es">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Dr. Jorge Luis Corredor</title>
-<meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="Dr. Jorge Luis Corredor Hernández, médico anestesiólogo en Villavicencio, Meta. Más de tres décadas al servicio de la salud del llano.">
-<link rel="icon" href="assets/logo.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,500;0,700;1,500&family=Figtree:wght@400;500;600&display=swap">
-<style>
-/* Layout: banda azul de portada con el logo, luego secciones claras alternadas y una línea de tiempo para la historia */
-:root {
-  --navy: #1b3358;
-  --navy-deep: #12243f;
-  --green: #5e8a3e;
-  --bg: #f6f8fb;
-  --surface: #ffffff;
-  --fg: #1a2433;
-  --muted: #536173;
-  --line: #d9e0ea;
-  --band-fg: #f2f5fa;
-  --band-muted: #b9c6da;
-  --accent: #1f4f8f;
-  --font-display: "Spectral", Georgia, "Times New Roman", serif;
-  --font-body: "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
-}
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #0e1726; --surface: #152238; --fg: #e6ecf5; --muted: #a3b1c6;
-    --line: #26354f; --accent: #8db4ea; --green: #8fbf6a; color-scheme: dark;
-  }
-}
-:root[data-theme="dark"] {
-  --bg: #0e1726; --surface: #152238; --fg: #e6ecf5; --muted: #a3b1c6;
-  --line: #26354f; --accent: #8db4ea; --green: #8fbf6a; color-scheme: dark;
-}
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
-body {
-  margin: 0; background: var(--bg); color: var(--fg);
-  font-family: var(--font-body); font-size: 1.0625rem; line-height: 1.65;
-}
-img { max-width: 100%; }
-a { color: var(--accent); }
-a:focus-visible, button:focus-visible { outline: 3px solid var(--green); outline-offset: 3px; }
-h1, h2, h3 { font-family: var(--font-display); line-height: 1.15; text-wrap: balance; margin: 0; }
-.wrap {
-  max-width: 68rem; margin: 0 auto;
-  padding-left: max(16px, env(safe-area-inset-left, 0px));
-  padding-right: max(16px, env(safe-area-inset-right, 0px));
-}
-.eyebrow {
-  font-size: .78rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase;
-  color: var(--green); margin: 0 0 .6rem;
-}
-
-/* Navegación */
-body::before {
-  content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px);
-  z-index: 10; background: var(--navy-deep);
-}
-.nav {
-  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5;
-  background: var(--navy-deep); color: var(--band-fg);
-}
-.nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-block: .7rem; flex-wrap: wrap; }
-.brand { display: flex; align-items: center; gap: .6rem; color: inherit; text-decoration: none; font-weight: 600; }
-.brand img { width: 34px; height: 34px; border-radius: 50%; background: #fff; padding: 2px; }
-.nav ul { display: flex; gap: 1.2rem; list-style: none; margin: 0; padding: 0; flex-wrap: wrap; }
-.nav ul a { color: var(--band-muted); text-decoration: none; font-size: .95rem; }
-.nav ul a:hover { color: #fff; }
-
-/* Portada */
-.hero { background: var(--navy); color: var(--band-fg); }
-.hero .wrap {
-  display: grid; grid-template-columns: 1.4fr 1fr; gap: 3rem; align-items: center;
-  padding-block: 4.5rem 4rem;
-}
-.hero h1 { font-size: clamp(2.3rem, 5.5vw, 3.9rem); font-weight: 700; }
-.hero h1 span { display: block; font-weight: 500; font-style: italic; font-size: .55em; color: var(--band-muted); margin-top: .4rem; }
-.hero .eyebrow { color: #a9cf86; }
-.hero p.lead { font-size: 1.2rem; color: var(--band-fg); max-width: 34rem; margin: 1.4rem 0 0; }
-.creds { display: flex; flex-wrap: wrap; gap: .5rem; margin: 1.6rem 0 0; padding: 0; list-style: none; }
-.creds li { border: 1px solid rgba(255,255,255,.25); border-radius: 999px; padding: .3rem .85rem; font-size: .88rem; color: var(--band-fg); }
-.hero-logo { justify-self: center; width: min(320px, 100%); aspect-ratio: 1; border-radius: 50%; background: #fff; display: grid; place-items: center; padding: 6%; box-shadow: 0 0 0 10px rgba(255,255,255,.08); }
-.hero-logo img { width: 100%; height: auto; }
-
-/* Secciones */
-section { padding-block: 4.5rem; }
-section h2 { font-size: clamp(1.8rem, 3.6vw, 2.5rem); margin-bottom: 1.4rem; }
-.alt { background: var(--surface); border-block: 1px solid var(--line); }
-.two { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
-.two > * { min-width: 0; }
-.prose p { margin: 0 0 1rem; max-width: 65ch; }
-.facts { list-style: none; margin: 0; padding: 0; display: grid; gap: 1rem; }
-.facts li { display: grid; grid-template-columns: 6.5rem 1fr; gap: 1rem; padding-bottom: 1rem; border-bottom: 1px solid var(--line); }
-.facts b { font-family: var(--font-display); font-size: 1.5rem; color: var(--accent); line-height: 1.2; }
-.facts span { color: var(--muted); }
-
-/* Reconocimiento */
-.award { background: var(--navy-deep); color: var(--band-fg); }
-.award .wrap { display: grid; gap: 1.2rem; max-width: 52rem; text-align: center; }
-.award .eyebrow { color: #a9cf86; }
-.award h2 { font-size: clamp(1.7rem, 3.4vw, 2.4rem); margin: 0; }
-.award p { margin: 0 auto; max-width: 42rem; color: var(--band-muted); }
-.award blockquote { margin: .6rem 0 0; font-family: var(--font-display); font-style: italic; font-size: 1.35rem; color: #fff; }
-
-/* Anestesia segura */
-.steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.2rem; list-style: none; padding: 0; margin: 2rem 0 0; counter-reset: paso; }
-.steps li { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 1.4rem; counter-increment: paso; min-width: 0; }
-.steps li::before { content: "Paso " counter(paso); display: block; font-size: .75rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--green); margin-bottom: .5rem; }
-.steps h3 { font-size: 1.25rem; margin-bottom: .5rem; }
-.steps p { margin: 0; color: var(--muted); font-size: .97rem; }
-.note { margin-top: 1.6rem; color: var(--muted); font-size: .92rem; max-width: 65ch; }
-
-/* Historia */
-.timeline { list-style: none; margin: 2rem 0 0; padding: 0; border-left: 2px solid var(--line); }
-.timeline li { position: relative; padding: 0 0 1.8rem 1.6rem; max-width: 46rem; }
-.timeline li::before { content: ""; position: absolute; left: -7px; top: .45rem; width: 12px; height: 12px; border-radius: 50%; background: var(--green); }
-.timeline time { font-family: var(--font-display); font-weight: 700; font-size: 1.3rem; color: var(--accent); font-variant-numeric: tabular-nums; }
-.timeline p { margin: .2rem 0 0; }
-.founders { color: var(--muted); font-size: .95rem; }
-.founders strong { color: var(--fg); }
-
-/* Contacto */
-.contact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; margin-top: 1.5rem; }
-.contact-grid > div { background: var(--bg); border: 1px solid var(--line); border-radius: 10px; padding: 1.3rem; min-width: 0; overflow-wrap: anywhere; }
-.contact-grid h3 { font-family: var(--font-body); font-size: .8rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: .4rem; }
-.contact-grid p { margin: 0; font-size: 1.05rem; }
-.pending { color: var(--muted); font-style: italic; }
-
-footer { background: var(--navy-deep); color: var(--band-muted); font-size: .9rem; }
-footer .wrap { padding-block: 2rem; display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
-
-@media (max-width: 860px) {
-  .hero .wrap, .two { grid-template-columns: 1fr; gap: 2rem; }
-  .hero-logo { width: min(220px, 70%); grid-row: 1; }
-  .steps { grid-template-columns: 1fr 1fr; }
-  .contact-grid { grid-template-columns: 1fr; }
-}
-@media (max-width: 520px) {
-  .steps { grid-template-columns: 1fr; }
-  .nav ul { gap: .8rem; }
-  .facts li { grid-template-columns: 5rem 1fr; }
-}
-</style>
+{% include head.html %}
+<script>
+  // La intro (logo, luego el llano) solo se muestra si hay JavaScript y no se pidió reducir el movimiento
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('con-intro');
+</script>
 </head>
 <body>
 
-<nav class="nav" aria-label="Principal">
-  <div class="wrap">
-    <a class="brand" href="#inicio"><img src="assets/logo.png" alt="">Dr. Jorge Luis Corredor</a>
-    <ul>
-      <li><a href="#quien-soy">Quién soy</a></li>
-      <li><a href="#anestesia-segura">Anestesia segura</a></li>
-      <li><a href="#historia">Historia</a></li>
-      <li><a href="#contacto">Contacto</a></li>
-    </ul>
-  </div>
-</nav>
+<div id="intro" class="intro" aria-hidden="true">
+  <div class="intro-llano" style="background-image: url('{{ '/assets/llano.jpg' | relative_url }}')"></div>
+  <div class="intro-logo"><img src="{{ '/assets/logo.png' | relative_url }}" alt=""></div>
+  <button type="button" class="intro-saltar" id="intro-saltar">Saltar intro</button>
+</div>
 
-<header class="hero" id="inicio">
+{% include nav.html %}
+
+<header class="hero" id="inicio" style="background-image: url('{{ '/assets/llano.jpg' | relative_url }}')">
   <div class="wrap">
     <div>
       <p class="eyebrow">Médico anestesiólogo · Villavicencio, Meta</p>
@@ -175,7 +31,7 @@ footer .wrap { padding-block: 2rem; display: flex; justify-content: space-betwee
         <li>Al servicio del Meta desde 1991</li>
       </ul>
     </div>
-    <div class="hero-logo"><img src="assets/logo.png" alt="Logo JLC del Dr. Jorge Luis Corredor"></div>
+    <div class="hero-logo"><img src="{{ '/assets/logo.png' | relative_url }}" alt="Logo JLC del Dr. Jorge Luis Corredor"></div>
   </div>
 </header>
 
@@ -237,6 +93,10 @@ footer .wrap { padding-block: 2rem; display: flex; justify-content: space-betwee
   </div>
 </section>
 
+<figure class="banda-llano" style="background-image: url('{{ '/assets/llano.jpg' | relative_url }}')">
+  <figcaption class="wrap">Del llano, para el llano</figcaption>
+</figure>
+
 <section id="historia" class="alt">
   <div class="wrap">
     <p class="eyebrow">Historia</p>
@@ -258,6 +118,43 @@ footer .wrap { padding-block: 2rem; display: flex; justify-content: space-betwee
   </div>
 </section>
 
+<section id="videos">
+  <div class="wrap">
+    <p class="eyebrow">Videos</p>
+    <h2>Aprenda sobre la anestesia</h2>
+    <div class="videos">
+      {% for v in site.data.videos %}
+      <article class="video">
+        <div class="video-marco">
+          <iframe src="https://www.youtube-nocookie.com/embed/{{ v.youtube }}?cc_load_policy=1&amp;cc_lang_pref=es&amp;hl=es" title="{{ v.titulo }}" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <h3>{{ v.titulo }}</h3>
+        {% if v.descripcion %}<p>{{ v.descripcion }}</p>{% endif %}
+        <p><a href="https://www.youtube.com/watch?v={{ v.youtube }}" target="_blank" rel="noopener">Ver en YouTube</a></p>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section id="blog" class="alt">
+  <div class="wrap">
+    <p class="eyebrow">Blog</p>
+    <h2>Notas del doctor</h2>
+    <p class="blog-intro">Anestesia, salud, ciclismo y la vida en el llano.</p>
+    <div class="entradas">
+      {% for post in site.posts %}
+      <a class="entrada" href="{{ post.url | relative_url }}">
+        <span class="entrada-meta"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d/%m/%Y" }}</time>{% if post.tema %} · {{ post.tema }}{% endif %}</span>
+        <h3>{{ post.title }}</h3>
+        <p>{{ post.resumen | default: post.excerpt | strip_html | truncatewords: 30 }}</p>
+        <span class="entrada-leer">Leer más</span>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
 <section id="contacto">
   <div class="wrap">
     <p class="eyebrow">Contacto</p>
@@ -271,12 +168,22 @@ footer .wrap { padding-block: 2rem; display: flex; justify-content: space-betwee
 </section>
 </main>
 
-<footer>
-  <div class="wrap">
-    <span>© Dr. Jorge Luis Corredor Hernández · Médico anestesiólogo</span>
-    <span>Villavicencio, Meta</span>
-  </div>
-</footer>
+{% include footer.html %}
+
+<script>
+  (function () {
+    var intro = document.getElementById('intro');
+    if (!document.documentElement.classList.contains('con-intro')) return;
+    var fin = function () {
+      intro.classList.add('intro-fin');
+      setTimeout(function () { document.documentElement.classList.remove('con-intro'); }, 700);
+    };
+    // 1) logo, 2) aparece el llano, 3) se muestra la página
+    setTimeout(function () { intro.classList.add('intro-paso2'); }, 1800);
+    var t = setTimeout(fin, 4600);
+    document.getElementById('intro-saltar').addEventListener('click', function () { clearTimeout(t); fin(); });
+  })();
+</script>
 
 </body>
 </html>
