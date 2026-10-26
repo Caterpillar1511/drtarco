@@ -13,8 +13,14 @@
 
 <div id="intro" class="intro" aria-hidden="true">
   <div class="intro-llano" style="background-image: url('{{ '/assets/llano.jpg' | relative_url }}')"></div>
-  <div class="intro-logo"><img src="{{ '/assets/logo.png' | relative_url }}" alt=""></div>
-  <button type="button" class="intro-saltar" id="intro-saltar">Saltar intro</button>
+  <div class="intro-centro">
+    <div class="intro-logo">
+      <img src="{{ '/assets/logo.png' | relative_url }}" alt="">
+    </div>
+    <p class="intro-nombre">Dr. Jorge Luis Corredor Hernández<span>Médico anestesiólogo</span></p>
+  </div>
+  <p class="intro-lema">Del llano, para el llano</p>
+  <button type="button" class="intro-saltar">Saltar intro</button>
 </div>
 
 {% include nav.html %}
@@ -172,16 +178,25 @@
 
 <script>
   (function () {
-    var intro = document.getElementById('intro');
-    if (!document.documentElement.classList.contains('con-intro')) return;
-    var fin = function () {
-      intro.classList.add('intro-fin');
-      setTimeout(function () { document.documentElement.classList.remove('con-intro'); }, 700);
-    };
-    // 1) logo, 2) aparece el llano, 3) se muestra la página
-    setTimeout(function () { intro.classList.add('intro-paso2'); }, 1800);
-    var t = setTimeout(fin, 4600);
-    document.getElementById('intro-saltar').addEventListener('click', function () { clearTimeout(t); fin(); });
+    var raiz = document.documentElement, t1, t2;
+    function iniciar() {
+      // Se clona la intro para que las animaciones arranquen desde cero
+      var vieja = document.getElementById('intro'), intro = vieja.cloneNode(true);
+      intro.classList.remove('intro-paso2', 'intro-fin');
+      vieja.parentNode.replaceChild(intro, vieja);
+      raiz.classList.add('con-intro');
+      var fin = function () {
+        clearTimeout(t1); clearTimeout(t2);
+        intro.classList.add('intro-fin');
+        setTimeout(function () { raiz.classList.remove('con-intro'); }, 700);
+      };
+      // 1) se dibuja el logo, 2) aparece el llano, 3) se muestra la página
+      t1 = setTimeout(function () { intro.classList.add('intro-paso2'); }, 3600);
+      t2 = setTimeout(fin, 6400);
+      intro.querySelector('.intro-saltar').addEventListener('click', fin);
+    }
+    if (raiz.classList.contains('con-intro')) iniciar();
+    document.getElementById('ver-intro').addEventListener('click', function () { window.scrollTo(0, 0); iniciar(); });
   })();
 </script>
 
