@@ -56,7 +56,7 @@ body::before {
 }
 .nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-block: .7rem; flex-wrap: wrap; }
 .brand { display: flex; align-items: center; gap: .6rem; color: inherit; text-decoration: none; font-weight: 600; }
-.brand img { width: 34px; height: 34px; border-radius: 50%; background: #fff; padding: 2px; }
+.brand img { width: 36px; height: 36px; object-fit: contain; }
 .nav ul { display: flex; gap: 1.2rem; list-style: none; margin: 0; padding: 0; flex-wrap: wrap; }
 .nav ul a { color: var(--band-muted); text-decoration: none; font-size: .95rem; }
 .nav ul a:hover { color: #fff; }
@@ -131,7 +131,13 @@ footer .wrap { padding-block: 2rem; display: flex; justify-content: space-betwee
 }
 @media (max-width: 520px) {
   .steps { grid-template-columns: 1fr; }
-  .nav ul { gap: .8rem; }
+  .nav .wrap { gap: .5rem; padding-block: .6rem .5rem; }
+  .nav ul { flex-wrap: nowrap; overflow-x: auto; gap: 1rem; width: 100%; padding-bottom: .2rem; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+  .nav ul::-webkit-scrollbar { display: none; }
+  .nav ul a { white-space: nowrap; font-size: .9rem; }
+  .hero .wrap { padding-block: 2.5rem 3rem; gap: 1.5rem; }
+  .hero-logo { width: min(170px, 50%); justify-self: start; }
+  .hero .eyebrow { font-size: .7rem; }
   .facts li { grid-template-columns: 5rem 1fr; }
 }
 
@@ -165,6 +171,7 @@ footer .wrap { padding-block: 2rem; display: flex; justify-content: space-betwee
 .intro-paso2 .intro-centro { opacity: 0; }
 .intro-paso2 .intro-lema { opacity: 1; }
 @property --barrido { syntax: "<angle>"; inherits: false; initial-value: 360deg; }
+.intro-logo.dibujado img { -webkit-mask-image: none; mask-image: none; animation: none; }
 @keyframes barrido { from { --barrido: 0deg; } to { --barrido: 360deg; } }
 @keyframes latido { 0%, 100% { transform: scale(1); } 25% { transform: scale(1.06); } 45% { transform: scale(.98); } 65% { transform: scale(1.04); } }
 @keyframes sube { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }

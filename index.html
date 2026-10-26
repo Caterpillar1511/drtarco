@@ -178,7 +178,7 @@
 
 <script>
   (function () {
-    var raiz = document.documentElement, t1, t2;
+    var raiz = document.documentElement, t0, t1, t2;
     function iniciar() {
       // Se clona la intro para que las animaciones arranquen desde cero
       var vieja = document.getElementById('intro'), intro = vieja.cloneNode(true);
@@ -186,11 +186,13 @@
       vieja.parentNode.replaceChild(intro, vieja);
       raiz.classList.add('con-intro');
       var fin = function () {
-        clearTimeout(t1); clearTimeout(t2);
+        clearTimeout(t0); clearTimeout(t1); clearTimeout(t2);
         intro.classList.add('intro-fin');
         setTimeout(function () { raiz.classList.remove('con-intro'); }, 700);
       };
       // 1) se dibuja el logo, 2) aparece el llano, 3) se muestra la página
+      // al terminar el barrido se quita la máscara para que el logo nunca quede cortado
+      t0 = setTimeout(function () { intro.querySelector('.intro-logo').classList.add('dibujado'); }, 1900);
       t1 = setTimeout(function () { intro.classList.add('intro-paso2'); }, 3600);
       t2 = setTimeout(fin, 6400);
       intro.querySelector('.intro-saltar').addEventListener('click', fin);
