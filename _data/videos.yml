@@ -2,6 +2,10 @@
 # "youtube" es el código que aparece en el enlace después de "v=".
 # Ejemplo: https://www.youtube.com/watch?v=B_tTymvDWXk  →  youtube: B_tTymvDWXk
 
+- titulo: Video recomendado
+  youtube: wS--6MnNE70
+  descripcion: Video recomendado por el Dr. Jorge Luis Corredor.
+
 - titulo: ¿Cómo funciona la anestesia?
   youtube: B_tTymvDWXk
   descripcion: Animación de TED-Ed que explica qué le pasa al cuerpo durante la anestesia. Está en inglés; activa los subtítulos en español con el botón CC.
