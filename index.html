@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dr. Jorge Luis Corredor</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Dr. Jorge Luis Corredor Hernández, médico anestesiólogo en Villavicencio, Meta. Más de tres décadas al servicio de la salud del llano.">
+<link rel="icon" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,500;0,700;1,500&family=Figtree:wght@400;500;600&display=swap">
+<style>
+/* Layout: banda azul de portada con el logo, luego secciones claras alternadas y una línea de tiempo para la historia */
+:root {
+  --navy: #1b3358;
+  --navy-deep: #12243f;
+  --green: #5e8a3e;
+  --bg: #f6f8fb;
+  --surface: #ffffff;
+  --fg: #1a2433;
+  --muted: #536173;
+  --line: #d9e0ea;
+  --band-fg: #f2f5fa;
+  --band-muted: #b9c6da;
+  --accent: #1f4f8f;
+  --font-display: "Spectral", Georgia, "Times New Roman", serif;
+  --font-body: "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0e1726; --surface: #152238; --fg: #e6ecf5; --muted: #a3b1c6;
+    --line: #26354f; --accent: #8db4ea; --green: #8fbf6a; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0e1726; --surface: #152238; --fg: #e6ecf5; --muted: #a3b1c6;
+  --line: #26354f; --accent: #8db4ea; --green: #8fbf6a; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  margin: 0; background: var(--bg); color: var(--fg);
+  font-family: var(--font-body); font-size: 1.0625rem; line-height: 1.65;
+}
+img { max-width: 100%; }
+a { color: var(--accent); }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--green); outline-offset: 3px; }
+h1, h2, h3 { font-family: var(--font-display); line-height: 1.15; text-wrap: balance; margin: 0; }
+.wrap {
+  max-width: 68rem; margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.eyebrow {
+  font-size: .78rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--green); margin: 0 0 .6rem;
+}
+
+/* Navegación */
+body::before {
+  content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px);
+  z-index: 10; background: var(--navy-deep);
+}
+.nav {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5;
+  background: var(--navy-deep); color: var(--band-fg);
+}
+.nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-block: .7rem; flex-wrap: wrap; }
+.brand { display: flex; align-items: center; gap: .6rem; color: inherit; text-decoration: none; font-weight: 600; }
+.brand img { width: 34px; height: 34px; border-radius: 50%; background: #fff; padding: 2px; }
+.nav ul { display: flex; gap: 1.2rem; list-style: none; margin: 0; padding: 0; flex-wrap: wrap; }
+.nav ul a { color: var(--band-muted); text-decoration: none; font-size: .95rem; }
+.nav ul a:hover { color: #fff; }
+
+/* Portada */
+.hero { background: var(--navy); color: var(--band-fg); }
+.hero .wrap {
+  display: grid; grid-template-columns: 1.4fr 1fr; gap: 3rem; align-items: center;
+  padding-block: 4.5rem 4rem;
+}
+.hero h1 { font-size: clamp(2.3rem, 5.5vw, 3.9rem); font-weight: 700; }
+.hero h1 span { display: block; font-weight: 500; font-style: italic; font-size: .55em; color: var(--band-muted); margin-top: .4rem; }
+.hero .eyebrow { color: #a9cf86; }
+.hero p.lead { font-size: 1.2rem; color: var(--band-fg); max-width: 34rem; margin: 1.4rem 0 0; }
+.creds { display: flex; flex-wrap: wrap; gap: .5rem; margin: 1.6rem 0 0; padding: 0; list-style: none; }
+.creds li { border: 1px solid rgba(255,255,255,.25); border-radius: 999px; padding: .3rem .85rem; font-size: .88rem; color: var(--band-fg); }
+.hero-logo { justify-self: center; width: min(320px, 100%); aspect-ratio: 1; border-radius: 50%; background: #fff; display: grid; place-items: center; padding: 6%; box-shadow: 0 0 0 10px rgba(255,255,255,.08); }
+.hero-logo img { width: 100%; height: auto; }
+
+/* Secciones */
+section { padding-block: 4.5rem; }
+section h2 { font-size: clamp(1.8rem, 3.6vw, 2.5rem); margin-bottom: 1.4rem; }
+.alt { background: var(--surface); border-block: 1px solid var(--line); }
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+.two > * { min-width: 0; }
+.prose p { margin: 0 0 1rem; max-width: 65ch; }
+.facts { list-style: none; margin: 0; padding: 0; display: grid; gap: 1rem; }
+.facts li { display: grid; grid-template-columns: 6.5rem 1fr; gap: 1rem; padding-bottom: 1rem; border-bottom: 1px solid var(--line); }
+.facts b { font-family: var(--font-display); font-size: 1.5rem; color: var(--accent); line-height: 1.2; }
+.facts span { color: var(--muted); }
+
+/* Reconocimiento */
+.award { background: var(--navy-deep); color: var(--band-fg); }
+.award .wrap { display: grid; gap: 1.2rem; max-width: 52rem; text-align: center; }
+.award .eyebrow { color: #a9cf86; }
+.award h2 { font-size: clamp(1.7rem, 3.4vw, 2.4rem); margin: 0; }
+.award p { margin: 0 auto; max-width: 42rem; color: var(--band-muted); }
+.award blockquote { margin: .6rem 0 0; font-family: var(--font-display); font-style: italic; font-size: 1.35rem; color: #fff; }
+
+/* Anestesia segura */
+.steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.2rem; list-style: none; padding: 0; margin: 2rem 0 0; counter-reset: paso; }
+.steps li { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 1.4rem; counter-increment: paso; min-width: 0; }
+.steps li::before { content: "Paso " counter(paso); display: block; font-size: .75rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--green); margin-bottom: .5rem; }
+.steps h3 { font-size: 1.25rem; margin-bottom: .5rem; }
+.steps p { margin: 0; color: var(--muted); font-size: .97rem; }
+.note { margin-top: 1.6rem; color: var(--muted); font-size: .92rem; max-width: 65ch; }
+
+/* Historia */
+.timeline { list-style: none; margin: 2rem 0 0; padding: 0; border-left: 2px solid var(--line); }
+.timeline li { position: relative; padding: 0 0 1.8rem 1.6rem; max-width: 46rem; }
+.timeline li::before { content: ""; position: absolute; left: -7px; top: .45rem; width: 12px; height: 12px; border-radius: 50%; background: var(--green); }
+.timeline time { font-family: var(--font-display); font-weight: 700; font-size: 1.3rem; color: var(--accent); font-variant-numeric: tabular-nums; }
+.timeline p { margin: .2rem 0 0; }
+.founders { color: var(--muted); font-size: .95rem; }
+.founders strong { color: var(--fg); }
+
+/* Contacto */
+.contact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; margin-top: 1.5rem; }
+.contact-grid > div { background: var(--bg); border: 1px solid var(--line); border-radius: 10px; padding: 1.3rem; min-width: 0; overflow-wrap: anywhere; }
+.contact-grid h3 { font-family: var(--font-body); font-size: .8rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: .4rem; }
+.contact-grid p { margin: 0; font-size: 1.05rem; }
+.pending { color: var(--muted); font-style: italic; }
+
+footer { background: var(--navy-deep); color: var(--band-muted); font-size: .9rem; }
+footer .wrap { padding-block: 2rem; display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+
+@media (max-width: 860px) {
+  .hero .wrap, .two { grid-template-columns: 1fr; gap: 2rem; }
+  .hero-logo { width: min(220px, 70%); grid-row: 1; }
+  .steps { grid-template-columns: 1fr 1fr; }
+  .contact-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 520px) {
+  .steps { grid-template-columns: 1fr; }
+  .nav ul { gap: .8rem; }
+  .facts li { grid-template-columns: 5rem 1fr; }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav" aria-label="Principal">
+  <div class="wrap">
+    <a class="brand" href="#inicio"><img src="assets/logo.png" alt="">Dr. Jorge Luis Corredor</a>
+    <ul>
+      <li><a href="#quien-soy">Quién soy</a></li>
+      <li><a href="#anestesia-segura">Anestesia segura</a></li>
+      <li><a href="#historia">Historia</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="inicio">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">Médico anestesiólogo · Villavicencio, Meta</p>
+      <h1>Dr. Jorge Luis Corredor Hernández<span>Pionero de la medicina en el Meta</span></h1>
+      <p class="lead">Más de tres décadas acompañando con profesionalismo y humanidad a los pacientes del llano, desde el quirófano hasta la recuperación.</p>
+      <ul class="creds">
+        <li>Anestesiólogo, Universidad Nacional de Colombia</li>
+        <li>Médico, Pontificia Universidad Javeriana</li>
+        <li>Al servicio del Meta desde 1991</li>
+      </ul>
+    </div>
+    <div class="hero-logo"><img src="assets/logo.png" alt="Logo JLC del Dr. Jorge Luis Corredor"></div>
+  </div>
+</header>
+
+<main>
+<section id="quien-soy">
+  <div class="wrap two">
+    <div class="prose">
+      <p class="eyebrow">Quién soy</p>
+      <h2>Una vida dedicada a la salud del llano</h2>
+      <p>El Dr. Jorge Luis Corredor Hernández, médico anestesiólogo, ha sido un pilar de la atención hospitalaria en el departamento desde 1991. Ha acompañado a pacientes de diversa complejidad en el Hospital Departamental y en la Clínica Meta de Villavicencio.</p>
+      <p>Su liderazgo ha trascendido el ejercicio clínico. Ha contribuido no solo a salvar vidas, sino a fortalecer las instituciones de salud de la región.</p>
+      <p>Su vocación ha estado marcada por una mirada compasiva, un servicio desinteresado y el compromiso constante de llevar los avances médicos al servicio del pueblo llanero.</p>
+    </div>
+    <ul class="facts" aria-label="Trayectoria">
+      <li><b>1991</b><span>Inicia su ejercicio como anestesiólogo en el departamento del Meta.</span></li>
+      <li><b>30+</b><span>Años de servicio en el Hospital Departamental y la Clínica Meta de Villavicencio.</span></li>
+      <li><b>Presidente</b><span>Asociación de Anestesiólogos del Meta.</span></li>
+      <li><b>Tesorero</b><span>Colegio Médico del Meta.</span></li>
+      <li><b>Directivo</b><span>Miembro activo en la dirección de la Clínica Meta.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="award" aria-labelledby="premio">
+  <div class="wrap">
+    <p class="eyebrow">Reconocimiento</p>
+    <h2 id="premio">Orden al Mérito “Héroes sin capa, Carlos Fabián Nieto”</h2>
+    <p>Exaltamos la vida y trayectoria de un médico que ha dedicado más de tres décadas al servicio de la salud en el Meta. Con esta orden se reconoce su legado, su ética y su entrega.</p>
+    <blockquote>“Una vida al servicio de los demás también construye territorio.”</blockquote>
+  </div>
+</section>
+
+<section id="anestesia-segura">
+  <div class="wrap">
+    <p class="eyebrow">Anestesia segura</p>
+    <h2>Su seguridad, antes, durante y después de la cirugía</h2>
+    <div class="prose">
+      <p>La anestesia moderna es muy segura cuando se planea con cuidado y se vigila de forma continua. El anestesiólogo es el médico que cuida su vida mientras usted está en cirugía: controla el dolor, la respiración, el corazón y la presión arterial en cada momento.</p>
+    </div>
+    <ol class="steps">
+      <li>
+        <h3>Valoración preanestésica</h3>
+        <p>Antes del procedimiento revisamos su historia clínica, sus exámenes y su estado de salud para elegir el tipo de anestesia más adecuado para usted.</p>
+      </li>
+      <li>
+        <h3>Información completa</h3>
+        <p>Cuéntenos qué medicamentos toma, si tiene alergias, enfermedades o si ha tenido reacciones a una anestesia anterior.</p>
+      </li>
+      <li>
+        <h3>Monitoreo continuo</h3>
+        <p>Durante la cirugía vigilamos sin interrupción su oxigenación, ritmo cardiaco y presión arterial con equipos especializados.</p>
+      </li>
+      <li>
+        <h3>Recuperación acompañada</h3>
+        <p>Al terminar lo acompañamos mientras despierta, controlamos el dolor y le damos indicaciones claras para su casa.</p>
+      </li>
+    </ol>
+    <p class="note">Siga siempre las indicaciones de ayuno y de medicamentos que le dé su médico. Esta información es orientativa y no reemplaza la consulta.</p>
+  </div>
+</section>
+
+<section id="historia" class="alt">
+  <div class="wrap">
+    <p class="eyebrow">Historia</p>
+    <h2>Una familia pionera de la medicina en el llano</h2>
+    <div class="prose">
+      <p>El Dr. Jorge Luis Corredor hace parte de una de las familias del llano que han sido pioneras de la anestesiología y la medicina en el Meta. Entre los médicos fundadores de la Clínica Meta estuvieron los doctores Armando Corredor y Luis Corredor.</p>
+      <p>La Clínica Meta surgió de una controversia de los médicos de la época con el entonces Gobernador del Meta, Policarpo Castillo Dávila, con quien no lograron un acuerdo sobre sus condiciones laborales. Un grupo de médicos visionarios decidió entonces crear una clínica que, aunque privada, ofreciera soluciones de salud a la comunidad llanera con tarifas asequibles para ayudar a los más desfavorecidos de la región.</p>
+      <p class="founders">El grupo fue liderado por el <strong>Dr. Yesid Campo</strong>, acompañado por los doctores Jaime Botero, <strong>Armando Corredor</strong>, <strong>Luis Corredor</strong>, Jairo Delgado, Arturo Giraldo, Fabio Jaramillo, Álvaro Mesa, Miguel Navarro, Héctor Parrado, Miguel Parrado, José Pinzón, Héctor Ríos, Joaquín Roncancio, Carlos Royero, Gabriel Rojas, Víctor Rojas y Alfredo Rozo. También participaron la madre María Inmaculada, de la Comunidad de Hermanas de la Sabiduría, y los padres Cristóbal Castillo, Fernando Sendoya y Moisés Rodríguez, para brindar apoyo espiritual a los pacientes, junto con las auxiliares de enfermería Lucy Ovalle y Teresa Mora.</p>
+    </div>
+    <ol class="timeline">
+      <li><time datetime="1969-12-05">1969</time><p>El 5 de diciembre abre sus puertas la Clínica Meta, en un lote que costó $300.000 y con obra del arquitecto Plinio Hernán Castro. Inicia con urgencias 24 horas, medicina general, ortopedia, anestesiología, cirugía general, ginecología, nutrición, fisioterapia, laboratorio, enfermería y terapia de lenguaje.</p></li>
+      <li><time datetime="1971-03-18">1971</time><p>Se inscribe en la Cámara de Comercio de Villavicencio como Inversiones Clínica del Meta Limitada.</p></li>
+      <li><time datetime="1991">1991</time><p>El Dr. Jorge Luis Corredor inicia su ejercicio como anestesiólogo en el departamento.</p></li>
+      <li><time datetime="1993-08-09">1993</time><p>La institución se transforma en sociedad anónima: Inversiones Clínica del Meta S.A.</p></li>
+      <li><time datetime="1998">1998</time><p>Convenio académico con la Universidad Cooperativa para formar a los futuros médicos de la región.</p></li>
+      <li><time datetime="2004">2004</time><p>Abre la Unidad de Cuidado Intensivo Yesid Campo Montoya, en honor al socio fundador fallecido en el año 2000.</p></li>
+      <li><time datetime="2009">2009</time><p>Se inaugura la Torre M, un edificio de 6 pisos que amplía la atención con instalaciones modernas y hotelería de alto nivel.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section id="contacto">
+  <div class="wrap">
+    <p class="eyebrow">Contacto</p>
+    <h2>Hablemos</h2>
+    <div class="contact-grid">
+      <div><h3>Correo</h3><p class="pending">Pendiente de confirmar</p></div>
+      <div><h3>Teléfono</h3><p class="pending">Pendiente de confirmar</p></div>
+      <div><h3>Dónde atiende</h3><p>Clínica Meta<br>Villavicencio, Meta, Colombia</p></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© Dr. Jorge Luis Corredor Hernández · Médico anestesiólogo</span>
+    <span>Villavicencio, Meta</span>
+  </div>
+</footer>
+
+</body>
+</html>
