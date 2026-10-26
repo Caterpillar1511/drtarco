@@ -226,3 +226,10 @@ footer .wrap { padding-block: 2rem; display: flex; justify-content: space-betwee
 .post-img { width: 100%; height: auto; border-radius: 10px; margin-bottom: 1.6rem; }
 .post-body img { border-radius: 10px; }
 .ver-intro { font: inherit; color: inherit; background: none; border: 0; padding: 0; text-decoration: underline; cursor: pointer; }
+
+/* Aseguradoras */
+.aseguradoras { margin-top: 1.6rem; }
+.aseguradoras h3 { font-family: var(--font-body); font-size: .8rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: .7rem; }
+.aseguradoras p { margin: 0 0 .8rem; max-width: 65ch; }
+.aseguradoras ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: .6rem; }
+.aseguradoras li { border: 1px solid var(--line); background: var(--surface); border-radius: 999px; padding: .45rem 1.1rem; font-weight: 600; color: var(--accent); }
